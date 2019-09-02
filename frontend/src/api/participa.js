@@ -44,3 +44,10 @@ export async function getParticipacaoUltimaFeira(){
   }).catch(e => console.log(`Erro ${e}`));
   return participacao.data;
 }
+
+export async function getParticipacaoGeral(){
+  const participacao = await axios.get(`${host}/participacoes`, {
+    headers: { token: localStorage.getItem('token') },
+  }).catch(e => console.log(`Erro ${e}`));
+  return participacao.data;
+}
